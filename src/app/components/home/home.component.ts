@@ -1,8 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Pipe, PipeTransform } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { ActivatedRoute } from '@angular/router';
+
+@Pipe({ name: 'safe' })
+export class SafePipe implements PipeTransform {
+  constructor(private sanitizer: DomSanitizer) { }
+  transform(url) {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
+  }
+}
 
 @Component({
   selector: 'app-home',
@@ -27,9 +35,9 @@ export class HomeComponent implements OnInit {
   constructor(private sanitizer: DomSanitizer) {}
   values1: number[] = [1, 2, 3, 4];
 
-  transform(url) {
-    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
-  }
+  // transform(url) {
+  //   return this.sanitizer.bypassSecurityTrustResourceUrl(url);
+  // }
 
   ngOnInit(): void {}
 

@@ -30,7 +30,7 @@
             src="https://www.youtube.com/embed/BBpAmxU_NQo"
           ></mat-video> -->
           <p></p>
-          <iframe src=""></iframe>
+          <iframe [src]="video | safe"></iframe>
           <mat-card-content class="hide">
             <h2>DataStructues</h2>
             <small>Denis Ritche,Dell Employee</small>

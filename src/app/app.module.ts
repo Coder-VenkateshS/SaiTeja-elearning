@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { AppComponent  } from './app.component';
 import { MaterialsModule } from './materials/materials.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainPageComponent } from './components/main-page/main-page.component';
@@ -11,7 +11,7 @@ import { LoginComponent } from './components/login/login.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './components/header/header.component';
-import { HomeComponent } from './components/home/home.component';
+import { HomeComponent, SafePipe } from './components/home/home.component';
 import { AuthGuard } from './authentication/auth.guard';
 import { LearningComponent } from './components/learning/learning.component';
 import { AccountComponent } from './components/account/account.component';
@@ -31,6 +31,7 @@ import { MatVideoModule } from 'mat-video';
     LearningComponent,
     AccountComponent,
     FooterComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,
